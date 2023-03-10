@@ -1,6 +1,6 @@
 [package]
 name = "spacerocks"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Kevin Napier"]
 description = "Software for solar system calculations."
@@ -12,3 +12,4 @@ include = ["/src"]
 
 [dependencies]
 nalgebra = "0.32.2"
+
