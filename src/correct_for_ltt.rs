@@ -4,14 +4,11 @@ use crate::spacerock::SpaceRock;
 
 pub fn correct_for_ltt(rock: &SpaceRock, observer: &SpaceRock) -> StateVector {
 
-    
     let mut temp = StateVector::new(rock.position.x, rock.position.y, rock.position.z, 
                                     rock.velocity.x, rock.velocity.y, rock.velocity.z);
 
     let r = rock.position.norm();
-    let xi = MU_BARY / (r * r * r);
-
-    
+    let xi = MU_BARY / (r * r * r);    
     let mut ltt0 = 0.0;
 
     let mut d_pos = temp.position - observer.position;
