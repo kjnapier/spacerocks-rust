@@ -21,8 +21,7 @@ impl Observatory {
     }
 
     pub fn at(&self, epoch: f64) -> SpaceRock {
-        let et = spice::str2et(&format!("JD{epoch} UTC", epoch=epoch));
-        let mut earth = SpaceRock::from_spice("Earth", et);
+        let mut earth = SpaceRock::from_spice("Earth", epoch);
 
         // compute the topocentric correction to the position of the observatory using the local sidereal time
         let [d_pos, d_vel] = compute_topocentric_correction(self.lon, self.lat, self.elevation, epoch);
