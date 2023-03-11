@@ -76,7 +76,7 @@ impl Detection {
         let elongation_rate = self.pointing_vector.dot(&r_hat_dot) + self.observer.position.unit().dot(&self.pointing_vector_rate);
         return elongation_rate;
     }
-
+    
 }
 
 
