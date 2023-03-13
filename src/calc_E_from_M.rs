@@ -3,6 +3,7 @@ pub fn calc_E_from_M(e: f64, M: f64) -> f64 {
 
     let mut E;
 
+    // Handle trivial cases
     if e == 0.0 {
         E = M;
         return E;

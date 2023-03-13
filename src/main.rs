@@ -10,9 +10,8 @@ use std::io::Write;
 
 fn main() {
 
-    spice::furnsh("/Users/kjnapier/Desktop/research/spacerocks/spacerocks/data/spice/latest_leapseconds.tls");
-    spice::furnsh("/Users/kjnapier/Desktop/research/spacerocks/spacerocks/data/spice/de423.bsp");
-    spice::furnsh("/Users/kjnapier/Desktop/research/spacerocks/spacerocks/data/spice/gm_Horizons.pck");
+    spice::furnsh("/home/kevin/Desktop/spice/latest_leapseconds.tls");
+    spice::furnsh("/home/kevin/Desktop/spice/de440s.bsp");
 
     let mut epochs: Vec<f64> = Vec::new();
     let mut epoch = 2450000.38373;
@@ -21,7 +20,7 @@ fn main() {
         epoch += 0.01;
     }
 
-    let mut file = File::create("/Users/kjnapier/Desktop/positions.csv").unwrap();
+    let mut file = File::create("/home/kevin/Desktop/positions.csv").unwrap();
     file.write_all(b"objid,x,y,z\n").unwrap();
     let objids = &vec!["Jupiter Barycenter", "Earth", "Sun", "Neptune Barycenter", "Mars Barycenter", 
                       "Venus Barycenter", "Mercury Barycenter", "Saturn Barycenter", "Uranus Barycenter", "Pluto Barycenter", "Moon"];
@@ -38,7 +37,7 @@ fn main() {
     }
 
     let w84 = Observatory::from_coordinates(-30.00293494202556, -70.80642, 2207.0);
-    let mut file = File::create("/Users/kjnapier/Desktop/moon-sky.csv").unwrap();
+    let mut file = File::create("/home/kevin/Desktop/moon-sky.csv").unwrap();
     file.write_all(b"objid,epoch,ra,dec\n").unwrap();
     for epoch in &epochs {
         let mut body = SpaceRock::from_spice("moon", *epoch);
