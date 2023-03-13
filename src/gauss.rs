@@ -1,7 +1,7 @@
-use spacerocks::detection::Detection;
-use spacerocks::constants::MU_BARY;
-use spacerocks::keplerorbit::KeplerOrbit;
-use spacerocks::statevector::StateVector;
+use crate::detection::Detection;
+use crate::constants::MU_BARY;
+use crate::keplerorbit::KeplerOrbit;
+use crate::statevector::StateVector;
 
 use nalgebra::Matrix3;
 use nalgebra::matrix;
