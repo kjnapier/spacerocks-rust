@@ -10,13 +10,13 @@ pub struct Detection {
     pub epoch: f64,
     pub objid: String,
     pub obscode: String,
-    pub observer: Vector3<f64>,
+    pub observer: SpaceRock,
     pub pointing_vector: Vector3<f64>
 }
 
 impl Detection {
 
-    pub fn new(ra: f64, dec: f64, ra_rate: f64, dec_rate: f64, epoch: f64, objid: String, obscode: String, observer: Vector3<f64>) -> Self {
+    pub fn new(ra: f64, dec: f64, ra_rate: f64, dec_rate: f64, epoch: f64, objid: String, obscode: String, observer: SpaceRock) -> Self {
 
         let pointing_vector = compute_pointing_vector(ra, dec);
         Detection {
