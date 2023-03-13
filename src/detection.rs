@@ -2,7 +2,7 @@ use nalgebra::Vector3;
 use crate::spacerock::SpaceRock;
 
 #[allow(dead_code)]
-#[derive(Debug)]
+//#[derive(Debug)]
 pub struct Detection {
     pub ra: f64,
     pub dec: f64,
